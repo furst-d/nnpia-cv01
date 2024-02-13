@@ -13,7 +13,7 @@ public class ConstructorDiGreeting {
         this.greetingService = greetingService;
     }
 
-    public void sayHello() {
-        greetingService.sayGreeting();
+    public String sayHello() {
+        return greetingService.sayGreeting();
     }
 }

@@ -1,10 +1,14 @@
 package cz.upce.fei.nnpiacv01.controllers;
 
 import cz.upce.fei.nnpiacv01.services.GreetingService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
-public class SetterDiGreeting {
+@Controller
+public class SetterController {
     private GreetingService greetingService;
 
+    @Autowired
     public void setGreetingService(GreetingService greetingService) {
         this.greetingService = greetingService;
     }

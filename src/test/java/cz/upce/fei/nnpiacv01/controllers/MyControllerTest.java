@@ -1,15 +1,17 @@
 package cz.upce.fei.nnpiacv01.controllers;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ManualGreetingTest {
+@SpringBootTest
+class MyControllerTest {
 
     @Test
     void sayHello() {
-        ManualGreeting manualGreeting = new ManualGreeting();
-        String greeting = manualGreeting.sayHello();
+        MyController myController = new MyController();
+        String greeting = myController.sayHello();
         System.out.println(greeting);
         assertEquals("Hello, World!", greeting);
     }

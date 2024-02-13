@@ -3,21 +3,20 @@ package cz.upce.fei.nnpiacv01.controllers;
 import cz.upce.fei.nnpiacv01.services.GreetingServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class SetterDiGreetingTest {
-    SetterDiGreeting setDiGreeting;
+@SpringBootTest
+class SetterControllerTest {
 
-    @BeforeEach
-    void setUp() {
-        setDiGreeting = new SetterDiGreeting();
-        setDiGreeting.setGreetingService(new GreetingServiceImpl());
-    }
+    @Autowired
+    SetterController setterController;
 
     @Test
     void sayHello() {
-        String greeting = setDiGreeting.sayHello();
+        String greeting = setterController.sayHello();
         System.out.println(greeting);
         assertEquals("Hello, World!", greeting);
     }

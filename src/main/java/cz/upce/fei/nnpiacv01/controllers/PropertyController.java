@@ -1,8 +1,13 @@
 package cz.upce.fei.nnpiacv01.controllers;
 
 import cz.upce.fei.nnpiacv01.services.GreetingService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
-public class PropertyDiGreeting {
+@Controller
+public class PropertyController {
+
+    @Autowired
     GreetingService greetingService;
 
     public String sayHello() {

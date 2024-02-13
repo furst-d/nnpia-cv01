@@ -2,9 +2,18 @@ package cz.upce.fei.nnpiacv01.controllers;
 
 import cz.upce.fei.nnpiacv01.services.Greeting;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
+@SpringBootTest
 class DiTest {
+
+    @Autowired
+    private ConstructorDiGreeting constructorDiGreeting;
+
+    @Autowired
+    private SetDiGreeting setDiGreeting;
+
     @Test
     void testManualGreeting() {
         ManualGreeting manualGreeting = new ManualGreeting();
@@ -13,15 +22,11 @@ class DiTest {
 
     @Test
     void testSetDiGreeting() {
-        SetDiGreeting setDiGreeting = new SetDiGreeting();
-        setDiGreeting.setGreetingService(new Greeting());
         setDiGreeting.sayHello();
     }
 
     @Test
     void testConstructorDiGreeting() {
-        ConstructorDiGreeting constructorDiGreeting = new ConstructorDiGreeting(new Greeting());
         constructorDiGreeting.sayHello();
     }
-
 }

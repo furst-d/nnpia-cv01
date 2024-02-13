@@ -4,20 +4,20 @@ import cz.upce.fei.nnpiacv01.services.GreetingServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
-class SetterDiGreetingTest {
-    SetterDiGreeting setDiGreeting;
+class PropertyControllerTest {
+    PropertyController propertyController;
 
     @BeforeEach
     void setUp() {
-        setDiGreeting = new SetterDiGreeting();
-        setDiGreeting.setGreetingService(new GreetingServiceImpl());
+        propertyController = new PropertyController();
+        propertyController.greetingService = new GreetingServiceImpl();
     }
 
     @Test
     void sayHello() {
-        String greeting = setDiGreeting.sayHello();
+        String greeting = propertyController.sayHello();
         System.out.println(greeting);
         assertEquals("Hello, World!", greeting);
     }

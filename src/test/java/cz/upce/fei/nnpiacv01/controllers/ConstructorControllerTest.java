@@ -6,18 +6,17 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class PropertyDiGreetingTest {
-    PropertyDiGreeting propertyDiGreeting;
+class ConstructorControllerTest {
+    ConstructorController constructorController;
 
     @BeforeEach
     void setUp() {
-        propertyDiGreeting = new PropertyDiGreeting();
-        propertyDiGreeting.greetingService = new GreetingServiceImpl();
+        constructorController = new ConstructorController(new GreetingServiceImpl());
     }
 
     @Test
     void sayHello() {
-        String greeting = propertyDiGreeting.sayHello();
+        String greeting = constructorController.sayHello();
         System.out.println(greeting);
         assertEquals("Hello, World!", greeting);
     }

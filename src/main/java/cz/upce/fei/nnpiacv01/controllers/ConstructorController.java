@@ -1,12 +1,12 @@
 package cz.upce.fei.nnpiacv01.controllers;
 
-import cz.upce.fei.nnpiacv01.services.GreetingServiceImpl;
 import cz.upce.fei.nnpiacv01.services.GreetingService;
 
-public class ManualGreeting {
+public class ConstructorController {
     private final GreetingService greetingService;
-    public ManualGreeting() {
-        this.greetingService = new GreetingServiceImpl();
+
+    public ConstructorController(GreetingService greetingService) {
+        this.greetingService = greetingService;
     }
 
     public String sayHello() {

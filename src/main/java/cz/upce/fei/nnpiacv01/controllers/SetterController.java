@@ -2,7 +2,7 @@ package cz.upce.fei.nnpiacv01.controllers;
 
 import cz.upce.fei.nnpiacv01.services.GreetingService;
 
-public class SetterDiGreeting {
+public class SetterController {
     private GreetingService greetingService;
 
     public void setGreetingService(GreetingService greetingService) {
